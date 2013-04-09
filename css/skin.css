@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background-color: #000;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+.init {
+    background-image: url('../images/widget.png');
+    width: 180px;
+    height: 180px;
+    margin: 0;
+    position:relative;
+    cursor: pointer;
+}
+
+.init a img{
+    position: relative;
+    display: block;
+    top: 5px;
+    left: 94px;
+    width: 80px;
+    background-color: rgba(0,0,0,0.7);
+}
+
+#images{
+    width: 180px;
+    height: 180px;
+    margin: 0;
+    display: none;
+}
+
+.loaded .image-container{
+    vertical-align: bottom;
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.clearfix{
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.container {
+    vertical-align: bottom;
+    float: left;
+    width: 80px;
+    height: 80px;
+    border: 5px solid #000;
+    background-color: #000;
+
+}
+
+.image-container{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #000;
+}
+
+.loading .image-container{
+    background-size: 20px;
+}
+
+.loaded .image-container{
+    background-size: 80px;
+}
+
+.image-container span{
+    width: 100%;
+    height: 100%;
+    background: none;
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: opacity 500ms ease-in-out;
+    -moz-transition: opacity 500ms ease-in-out;
+    -ms-transition: opacity 500ms ease-in-out;
+    -o-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+}
+
+.image-container span:hover{ 
+    opacity: 1;
+    background-color: rgba(255,255,255,0.5);
+    background-image: url('../images/play.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.image-container img {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    vertical-align: bottom;
+    top: 67px;
+    display: block;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.playing span:hover{
+    background-image: url('../images/pause.png');
+}
+
+#image0 {
+    background-image: none;
+    width: 80px;
+    height: 80px;
+}
+#image1 {
+    background-image: none;
+    width: 80px;
+    height: 80px;
+}
+#image2 {
+    background-image: none;
+    width: 80px;
+    height: 80px;
+}
+#image3 {
+    background-image: none;
+    width: 80px;
+    height: 80px;
+}
