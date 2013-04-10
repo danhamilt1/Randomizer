@@ -35,9 +35,11 @@ body {
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
@@ -55,7 +57,6 @@ table {
     height: 180px;
     margin: 0;
     position:relative;
-    cursor: pointer;
 }
 
 .init a img{
@@ -80,7 +81,7 @@ table {
     width: 80px;
     height: 80px;
     background-color: #000;
-    cursor: pointer;
+    
 }
 
 .clearfix{
@@ -106,6 +107,7 @@ table {
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #000;
+    cursor: pointer;
 }
 
 .loading .image-container{
@@ -149,6 +151,33 @@ table {
 
 .playing span:hover{
     background-image: url('../images/pause.png');
+}
+
+.search{
+    padding: 0;
+    margin-top: 70px;
+}
+.search-box{
+    padding: 0;
+    width: 100px;
+    height: 15px;
+    margin: 5px 38px;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid #FFF;
+}
+
+#genre-submit{
+    cursor: pointer;
+    padding: 2px;
+    width: 80px;
+    margin: 0 46px;
+    color: #FFF;
+    background-color: #000;
+    font-family: helvetica, arial;
+    text-align: center;
+    border: 1px solid #FFF;
 }
 
 #image0 {
