@@ -15,13 +15,19 @@
              * function keeping it asynchronous.
              * Data is JSON
              */
-            function getTracks(callback) {
+            function getTracks(genre, callback) {
                 var client_id = "client_id=9f10edff23a16d235414d0ccb2f4d373";
-                var search_term = "&q=house,deep,electronic";
+                var search_term = "&q=";
                 var order = "&order=hotness";
                 var limit = "&limit=200";
 
                 var data;
+                
+                if(genre === ""){
+                    search_term = search_term + "house, deep, electronic";
+                } else {
+                    search_term = search_term + genre;
+                }
                 /*
                  * JSON query to Soundcloud, retrieves tracks then passes them to 
                  * callback function
@@ -151,7 +157,7 @@
              * remove cover screen
              */
             jQuery(document).ready(function() {
-                jQuery("#init_screen").click(function() {
+                jQuery("#genre-submit").click(function() {
                     jQuery("#init_screen").fadeOut(function() {
                         jQuery("#images").show(function() {
                             var client_id = '9f10edff23a16d235414d0ccb2f4d373';
@@ -159,6 +165,7 @@
                             var trackList;
                             var selectedTrack = new Array;
                             var playing = null;
+                            var genre = jQuery("#search-box").val();
 
 
 
@@ -166,7 +173,7 @@
                              * gets tracklist and puts them to callback function, populates
                              * and selects 4 first random tracks from list
                              */
-                            getTracks(function(tracks) {
+                            getTracks(genre, function(tracks) {
                                 var i, maxRand;
                                 trackList = tracks;
                                 tracksShowing = populateTrackList(trackList);
@@ -280,11 +287,10 @@
            
                 <a href="http://www.soundcloud.com"><img src="./images/powered.png"/></a>
             <form class="search">
-                <input class="search-box">
+                <input id="search-box" class="search-box" placeholder="Genre">
                 </input>
-                <br/>
-                <button class="search-button">Submit</button>
             </form>
+            <div id="genre-submit">SUBMIT</div>
         </div>
         <div id ="images" class ="loaded">
             <div class="container">
