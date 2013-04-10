@@ -152,11 +152,21 @@
                 return selectedTrack;
             }
 
+
+
             /*
              * Starting point to run on page ready. Initial click event to 
              * remove cover screen
              */
             jQuery(document).ready(function() {
+	
+		$('#search-box').keydown(function(event){    
+    			if(event.keyCode==13){
+
+      			 	$('#genre-submit').trigger('click');
+   			}
+		});
+
                 jQuery("#genre-submit").click(function() {
                     jQuery("#init_screen").fadeOut(function() {
                         jQuery("#images").show(function() {
@@ -286,7 +296,7 @@
         <div id="init_screen" class="init">
            
                 <a href="http://www.soundcloud.com"><img src="./images/powered.png"/></a>
-            <form class="search">
+            <form class="search" onsubmit="return false">
                 <input id="search-box" class="search-box" placeholder="Genre">
                 </input>
             </form>
